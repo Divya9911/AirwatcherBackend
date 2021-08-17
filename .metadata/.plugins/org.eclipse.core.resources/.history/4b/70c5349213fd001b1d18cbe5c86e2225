@@ -1,0 +1,5 @@
+package com.stackroute.airwatcher.filter;
+
+public class WatchedCityFilter {
+
+}

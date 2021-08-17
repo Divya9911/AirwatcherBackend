@@ -1,0 +1,28 @@
+package com.stackroute.airwatcher.model;
+
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class FavouriteCity {
+
+	@Id
+	String userid;
+	List<City> cities;
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public List<City> getCities() {
+		return cities;
+	}
+	public void setCities(List<City> cities) {
+		this.cities = cities;
+	}
+	
+	
+}

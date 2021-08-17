@@ -1,0 +1,5 @@
+package com.stackroute.accountmanager;
+
+public class UserAlreadyExistsException {
+
+}

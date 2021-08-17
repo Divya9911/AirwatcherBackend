@@ -1,0 +1,5 @@
+package com.stackroute.airwatcher.dao;
+
+public class WatchedCityRepo {
+
+}

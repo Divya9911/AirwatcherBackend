@@ -1,0 +1,5 @@
+package com.stackroute.accountmanager.model;
+
+public class UserProfile {
+
+}

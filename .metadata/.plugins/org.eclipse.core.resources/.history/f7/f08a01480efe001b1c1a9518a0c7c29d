@@ -1,0 +1,8 @@
+package com.stackroute.accountmanager.exception;
+
+public class Snippet {
+	public static void main(String[] args) {
+		UserProfile 
+	}
+}
+

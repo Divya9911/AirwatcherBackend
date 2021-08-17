@@ -1,0 +1,49 @@
+package com.stackroute.airwatcher.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.stackroute.airwatcher.dao.WatchedCityRepo;
+import com.stackroute.airwatcher.model.City;
+import com.stackroute.airwatcher.model.WatchedCity;
+
+@Service
+public class WatchedCityServiceImpl implements WatchedCityService{
+	
+	WatchedCityRepo cityrepo;
+	
+	@Autowired
+	public WatchedCityServiceImpl(WatchedCityRepo cityrepo){
+		this.cityrepo = cityrepo;
+	}
+
+	@Override
+	public boolean addCity(City city) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<City> getAllCityByUserId(String userid) {
+		System.out.println("Inside service");
+		Optional<WatchedCity> optwatchedcity = cityrepo.findById(userid);
+		System.out.println("Optional : "+optwatchedcity);
+		if(optwatchedcity.isPresent()) {
+			WatchedCity existwatchedcity = optwatchedcity.get();
+			System.out.println("Watched City : "+existwatchedcity);
+			List<City> existcities = existwatchedcity.getCities();
+			System.out.println("Cities are : "+existcities);
+			return existcities;
+		}
+		return null;
+	}
+
+	@Override
+	public List<WatchedCity> getAllWatchedCity() {
+		return cityrepo.findAll();
+	}
+
+}
